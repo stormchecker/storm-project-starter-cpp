@@ -130,7 +130,7 @@ jobs:
     runs-on: ubuntu-latest
     needs: [linux_tests, mac_tests]
     # Only run in main repo and even if previous step failed
-    if: github.repository_owner == 'moves-rwth' && always()
+    if: github.repository_owner == 'stormchecker' && always()
     steps:
       - uses: technote-space/workflow-conclusion-action@v3
       - uses: dawidd6/action-send-mail@v8
