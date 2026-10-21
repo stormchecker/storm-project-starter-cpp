@@ -89,5 +89,5 @@ set(MAIN_FILE src/main.cpp)
 add_executable(starter-project ${MAIN_FILE})
 
 # Set include directories and dependencies
-target_link_libraries(starter-project PRIVATE storm storm-parsers)
+target_link_libraries(starter-project PRIVATE storm storm-parsers storm-version-info)
 # Note that other libraries/includes from Storm might need to be added depending on the used functionality.

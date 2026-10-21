@@ -1,6 +1,7 @@
 #include <storm/api/storm.h>
 #include <storm/utility/initialize.h>
 #include <storm-parsers/api/storm-parsers.h>
+#include <storm-version-info/storm-version.h>
 // We include the settings manager explicitly, as it is no longer pulled in transitively by storm/api/storm.h.
 // TODO: drop the settings usage, e.g. by switching from storm::settings to storm::Environment, once the settings are fully removed from the storm API.
 #include <storm/settings/SettingsManager.h>
@@ -49,6 +50,9 @@ int main(int argc, char* argv[]) {
     storm::utility::setUp();
     // Set some settings objects.
     storm::settings::initializeAll("storm-starter-project", "storm-starter-project");
+
+    // Print the version of Storm that we are linked against.
+    std::cout << "Storm " << storm::StormVersion::shortVersionString() << std::endl;
 
     // Call function
     auto result = check(argv[1], argv[2]);
